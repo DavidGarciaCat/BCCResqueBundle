@@ -12,3 +12,6 @@ env:
 before_script:
   - composer require symfony/framework-bundle:${SYMFONY_FRAMEWORK}
   - composer install -o
+
+script:
+  - ./vendor/bin/phpunit

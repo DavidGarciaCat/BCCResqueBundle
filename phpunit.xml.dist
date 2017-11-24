@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- https://phpunit.de/manual/current/en/appendixes.configuration.html -->
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/4.8/phpunit.xsd"
+         backupGlobals="false"
+         colors="true">
+    <php>
+        <ini name="error_reporting" value="-1" />
+    </php>
+
+    <testsuites>
+        <testsuite name="PHPUnit Test Suite">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+
+    <!--
+    <logging>
+        <log type="coverage-html" target="coverage/phpunit" charset="UTF-8" yui="true" highlight="true" lowUpperBound="50" highLowerBound="80"/>
+        <log type="coverage-xml" target="coverage/phpunit.xml" charset="UTF-8" />
+        <log type="testdox-html" target="coverage/testdox.html" />
+    </logging>
+    -->
+</phpunit>
