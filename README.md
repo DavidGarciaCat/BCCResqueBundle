@@ -1,6 +1,8 @@
 # Intro to DavidGarciaCatResqueBundle
 
-The BCC resque bundle provides integration of [php-resque](https://github.com/chrisboulton/php-resque/) to Symfony2. It is inspired from resque, a Redis-backed Ruby library for creating background jobs, placing them on multiple queues, and processing them later.
+This project is a Fork of [michelsalib/BCCResqueBundle](https://github.com/michelsalib/BCCResqueBundle) for Symfony v2 & Symfony v3.
+
+It is inspired from resque, a Redis-backed Ruby library for creating background jobs, placing them on multiple queues, and processing them later.
 
 ## Features:
 
@@ -8,10 +10,11 @@ The BCC resque bundle provides integration of [php-resque](https://github.com/ch
 - Enqueue a Job with parameters on a given queue
 - Creating background worker on a given queue
 - A UX to monitor your queues, workers and job statuses
-- ability to schedule jobs to run at a specific time or after a number of seconds delay
-- ability to auto re-queue failed jobs, with back-off strategies
+- Ability to schedule jobs to run at a specific time or after a number of seconds delay
+- Ability to auto re-queue failed jobs, with back-off strategies
 
-TODOs:
+## TODOs:
+- Update README.md (this file) to match with all updated settings
 - Log management
 - Job status tracking
 - Redis configuration
@@ -19,8 +22,10 @@ TODOs:
 - Tests
 
 ## Screenshots
+
 ### Dashboard
-![](https://github.com/michelsalib/DavidGarciaCatResqueBundle/raw/master/Resources/screens/home.png)
+
+![Dashboard](https://github.com/michelsalib/DavidGarciaCatResqueBundle/raw/master/Resources/screens/home.png)
 
 ## Installation and configuration:
 
@@ -30,13 +35,13 @@ Make sure you have redis installed on your machine: http://redis.io/
 
 ### Get the bundle
 
-Add to your `bcc-resque-bundle` to your dependencies:
+Require the `ResqueBundle` package on your `composer.json` file:
 
 ``` json
 {
     "require": {
         ...
-        "bcc/resque-bundle": "dev-master"
+        "david-garcia/resque-bundle": "^1.1"
     }
     ...
 }
@@ -44,7 +49,7 @@ Add to your `bcc-resque-bundle` to your dependencies:
 
 To install, run `php composer.phar [update|install]`.
 
-### Add DavidGarciaCatResqueBundle to your application kernel
+### Add the Bundle to your application kernel
 
 ``` php
 <?php
@@ -125,7 +130,8 @@ This bundle is prepared for lazy loading in order to make a connection to redis 
 
 ## Creating a Job
 
-A job is a subclass of the `DavidGarciaCat\ResqueBundle\Job` class. You also can use the `BCC\Resque\ContainerAwareJob` if you need to leverage the container during job execution.
+A job is a subclass of the `DavidGarciaCat\ResqueBundle\Job` class.
+You also can use the `BCC\Resque\ContainerAwareJob` if you need to leverage the container during job execution.
 You will be forced to implement the run method that will contain your job logic:
 
 ``` php
@@ -139,7 +145,7 @@ class MyJob extends Job
 {
     public function run($args)
     {
-        \file_put_contents($args['file'], $args['content']);
+        file_put_contents($args['file'], $args['content']);
     }
 }
 ```
