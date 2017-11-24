@@ -63,7 +63,7 @@ class StartWorkerCommand extends ContainerAwareCommand
         $redisPort = $this->getContainer()->getParameter('bcc_resque.resque.redis.port');
         $redisDatabase = $this->getContainer()->getParameter('bcc_resque.resque.redis.database');
 
-        if ($redisHost != null && $redisPort != null) {
+        if (!is_null($redisHost) && !is_null($redisPort)) {
             $env['REDIS_BACKEND'] = $redisHost.':'.$redisPort;
         }
 
