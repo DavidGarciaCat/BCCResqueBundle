@@ -10,5 +10,5 @@ env:
   - SYMFONY_FRAMEWORK=3.3.*
 
 before_script:
-  - composer require symfony/framework-bundle:${SYMFONY_FWK_BUNDLE_VERSION}
+  - composer require symfony/framework-bundle:${SYMFONY_FRAMEWORK}
   - composer install -o
