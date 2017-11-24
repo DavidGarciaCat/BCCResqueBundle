@@ -34,6 +34,5 @@
         "psr-4": {
             "tests\\DavidGarciaCat\\ResqueBundle\\": "tests"
         }
-    },
-    "target-dir": "BCC/ResqueBundle"
+    }
 }
