@@ -25,7 +25,7 @@ It is inspired from resque, a Redis-backed Ruby library for creating background 
 
 ### Dashboard
 
-![](https://github.com/michelsalib/DavidGarciaCatResqueBundle/raw/master/Resources/screens/home.png)
+![Dashboard](https://raw.githubusercontent.com/DavidGarciaCat/BCCResqueBundle/master/src/Resources/screens/home.png)
 
 ## Installation and configuration:
 
