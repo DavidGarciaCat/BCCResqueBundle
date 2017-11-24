@@ -14,8 +14,7 @@ class ClearQueueCommand extends ContainerAwareCommand
         $this
             ->setName('bcc:resque:clear-queue')
             ->setDescription('Clear a BCC queue')
-            ->addArgument('queue', InputArgument::REQUIRED, 'Queue name')
-        ;
+            ->addArgument('queue', InputArgument::REQUIRED, 'Queue name');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
@@ -23,7 +22,7 @@ class ClearQueueCommand extends ContainerAwareCommand
         $resque = $this->getContainer()->get('bcc_resque.resque');
 
         $queue = $input->getArgument('queue');
-        $count=$resque->clearQueue($queue);
+        $count = $resque->clearQueue($queue);
 
         $output->writeln('Cleared queue '.$queue.' - removed '.$count.' entries');
 
