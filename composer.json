@@ -22,8 +22,8 @@
         "chrisboulton/php-resque-scheduler": "^1.1"
     },
     "autoload": {
-        "psr-0": {
-            "BCC\\ResqueBundle": ""
+        "psr-4": {
+            "DavidGarciaCat\\ResqueBundle\\": "src"
         }
     },
     "target-dir": "BCC/ResqueBundle"

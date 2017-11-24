@@ -88,7 +88,7 @@ class StartWorkerCommand extends ContainerAwareCommand
         $workerCommand = strtr('%php% %opt% %dir%/resque', [
             '%php%' => $phpExecutable,
             '%opt%' => $opt,
-            '%dir%' => __DIR__.'/../bin',
+            '%dir%' => __DIR__ . '/../bin',
         ]);
 
         if (!$input->getOption('foreground')) {
