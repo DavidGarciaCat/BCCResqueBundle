@@ -27,7 +27,7 @@ class Queue
 
         $result = [];
         foreach ($jobs as $job) {
-            $job = new \Resque_Job($this->name, \json_decode($job, true));
+            $job = new \Resque_Job($this->name, json_decode($job, true));
             $result[] = $job->getInstance();
         }
 

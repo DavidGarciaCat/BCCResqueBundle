@@ -21,7 +21,7 @@ abstract class Job
 
     public function getName()
     {
-        return \get_class($this);
+        return get_class($this);
     }
 
     public function setUp()

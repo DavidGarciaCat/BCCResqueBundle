@@ -11,7 +11,7 @@ class DefaultController extends Controller
         $this->getResque()->pruneDeadWorkers();
 
         return $this->render(
-            'BCCResqueBundle:Default:index.html.twig',
+            'DavidGarciaCatResqueBundle:Default:index.html.twig',
             [
                 'resque' => $this->getResque(),
             ]
@@ -30,7 +30,7 @@ class DefaultController extends Controller
         }
 
         return $this->render(
-            'BCCResqueBundle:Default:queue_show.html.twig',
+            'DavidGarciaCatResqueBundle:Default:queue_show.html.twig',
             [
                 'queue'      => $queue,
                 'jobs'       => $jobs,
@@ -50,7 +50,7 @@ class DefaultController extends Controller
         }
 
         return $this->render(
-            'BCCResqueBundle:Default:failed_list.html.twig',
+            'DavidGarciaCatResqueBundle:Default:failed_list.html.twig',
             [
                 'jobs'       => $jobs,
                 'showingAll' => $showingAll,
@@ -61,7 +61,7 @@ class DefaultController extends Controller
     public function listScheduledAction()
     {
         return $this->render(
-            'BCCResqueBundle:Default:scheduled_list.html.twig',
+            'DavidGarciaCatResqueBundle:Default:scheduled_list.html.twig',
             [
                 'timestamps' => $this->getResque()->getDelayedJobTimestamps(),
             ]
@@ -78,7 +78,7 @@ class DefaultController extends Controller
         }
 
         return $this->render(
-            'BCCResqueBundle:Default:scheduled_timestamp.html.twig',
+            'DavidGarciaCatResqueBundle:Default:scheduled_timestamp.html.twig',
             [
                 'timestamp' => $timestamp,
                 'jobs'      => $jobs,

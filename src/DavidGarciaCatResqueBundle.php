@@ -4,6 +4,6 @@ namespace DavidGarciaCat\ResqueBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class BCCResqueBundle extends Bundle
+class DavidGarciaCatResqueBundle extends Bundle
 {
 }

@@ -1,4 +1,4 @@
-# Intro to BCCResqueBundle
+# Intro to DavidGarciaCatResqueBundle
 
 The BCC resque bundle provides integration of [php-resque](https://github.com/chrisboulton/php-resque/) to Symfony2. It is inspired from resque, a Redis-backed Ruby library for creating background jobs, placing them on multiple queues, and processing them later.
 
@@ -20,7 +20,7 @@ TODOs:
 
 ## Screenshots
 ### Dashboard
-![](https://github.com/michelsalib/BCCResqueBundle/raw/master/Resources/screens/home.png)
+![](https://github.com/michelsalib/DavidGarciaCatResqueBundle/raw/master/Resources/screens/home.png)
 
 ## Installation and configuration:
 
@@ -44,7 +44,7 @@ Add to your `bcc-resque-bundle` to your dependencies:
 
 To install, run `php composer.phar [update|install]`.
 
-### Add BCCResqueBundle to your application kernel
+### Add DavidGarciaCatResqueBundle to your application kernel
 
 ``` php
 <?php
@@ -54,7 +54,7 @@ To install, run `php composer.phar [update|install]`.
     {
         return array(
             // ...
-            new DavidGarciaCat\ResqueBundle\BCCResqueBundle(),
+            new DavidGarciaCat\ResqueBundle\DavidGarciaCatResqueBundle(),
             // ...
         );
     }
@@ -66,8 +66,8 @@ Add to your `routing.yml`:
 
 ``` yml
 # app/config/routing.yml
-BCCResqueBundle:
-    resource: "@BCCResqueBundle/Resources/config/routing.xml"
+DavidGarciaCatResqueBundle:
+    resource: "@DavidGarciaCatResqueBundle/Resources/config/routing.xml"
     prefix:   /resque
 ```
 

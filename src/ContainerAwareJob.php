@@ -28,7 +28,7 @@ abstract class ContainerAwareJob extends Job
 
     public function setKernelOptions(array $kernelOptions)
     {
-        $this->args = \array_merge($this->args, $kernelOptions);
+        $this->args = array_merge($this->args, $kernelOptions);
     }
 
     /**

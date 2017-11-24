@@ -71,7 +71,7 @@ class Resque
 
         $this->attachRetryStrategy($job);
 
-        $result = \Resque::enqueue($job->queue, \get_class($job), $job->args, $trackStatus);
+        $result = \Resque::enqueue($job->queue, get_class($job), $job->args, $trackStatus);
 
         if ($trackStatus) {
             return new \Resque_Job_Status($result);
@@ -102,7 +102,7 @@ class Resque
 
         $this->attachRetryStrategy($job);
 
-        \ResqueScheduler::enqueueAt($at, $job->queue, \get_class($job), $job->args);
+        \ResqueScheduler::enqueueAt($at, $job->queue, get_class($job), $job->args);
     }
 
     public function enqueueIn($in, Job $job)
@@ -113,7 +113,7 @@ class Resque
 
         $this->attachRetryStrategy($job);
 
-        \ResqueScheduler::enqueueIn($in, $job->queue, \get_class($job), $job->args);
+        \ResqueScheduler::enqueueIn($in, $job->queue, get_class($job), $job->args);
     }
 
     public function removedDelayed(Job $job)
@@ -124,7 +124,7 @@ class Resque
 
         $this->attachRetryStrategy($job);
 
-        return \ResqueScheduler::removeDelayed($job->queue, \get_class($job), $job->args);
+        return \ResqueScheduler::removeDelayed($job->queue, get_class($job), $job->args);
     }
 
     public function removeFromTimestamp($at, Job $job)
@@ -135,14 +135,17 @@ class Resque
 
         $this->attachRetryStrategy($job);
 
-        return \ResqueScheduler::removeDelayedJobFromTimestamp($at, $job->queue, \get_class($job), $job->args);
+        return \ResqueScheduler::removeDelayedJobFromTimestamp($at, $job->queue, get_class($job), $job->args);
     }
 
     public function getQueues()
     {
-        return \array_map(function ($queue) {
-            return new Queue($queue);
-        }, \Resque::queues());
+        return array_map(
+            function ($queue) {
+                return new Queue($queue);
+            },
+            \Resque::queues()
+        );
     }
 
     /**
@@ -166,14 +169,17 @@ class Resque
                 $hostname = gethostname();
             }
 
-            $workers = \array_filter($workers, function ($worker) use ($hostname) {
+            $workers = array_filter($workers, function ($worker) use ($hostname) {
                 return strpos((string) $worker, $hostname.':') === 0;
             });
         }
 
-        return \array_map(function ($worker) {
-            return new Worker($worker);
-        }, $workers);
+        return array_map(
+            function ($worker) {
+                return new Worker($worker);
+            },
+            $workers
+        );
     }
 
     public function getWorker($id)

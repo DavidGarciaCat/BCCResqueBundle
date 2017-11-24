@@ -1,9 +1,9 @@
 {
     "name": "david-garcia/resque-bundle",
     "type": "symfony-bundle",
-    "description": "Fork with some updates of unmaintained project michelsalib/BCCResqueBundle",
+    "description": "Fork with some updates of unmaintained project michelsalib/DavidGarciaCatResqueBundle",
     "keywords": ["resque job queue management"],
-    "homepage": "http://github.com/michelsalib/BCCResqueBundle",
+    "homepage": "http://github.com/michelsalib/DavidGarciaCatResqueBundle",
     "license": "MIT",
     "authors": [
         {

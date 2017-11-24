@@ -21,16 +21,19 @@ class Worker
 
     public function stop()
     {
-        $parts = \explode(':', $this->getId());
+        $parts = explode(':', $this->getId());
 
-        \posix_kill($parts[1], 3);
+        posix_kill($parts[1], 3);
     }
 
     public function getQueues()
     {
-        return \array_map(function ($queue) {
-            return new Queue($queue);
-        }, $this->worker->queues());
+        return array_map(
+            function ($queue) {
+                return new Queue($queue);
+            },
+            $this->worker->queues()
+        );
     }
 
     public function getProcessedCount()
