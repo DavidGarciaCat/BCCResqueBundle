@@ -1,6 +1,6 @@
 <?php
 
-namespace BCC\ResqueBundle\Controller;
+namespace DavidGarciaCat\ResqueBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -87,7 +87,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @return \BCC\ResqueBundle\Resque
+     * @return \DavidGarciaCat\ResqueBundle\Resque
      */
     protected function getResque()
     {

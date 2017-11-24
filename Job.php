@@ -1,6 +1,6 @@
 <?php
 
-namespace BCC\ResqueBundle;
+namespace DavidGarciaCat\ResqueBundle;
 
 abstract class Job
 {

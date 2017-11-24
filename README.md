@@ -54,7 +54,7 @@ To install, run `php composer.phar [update|install]`.
     {
         return array(
             // ...
-            new BCC\ResqueBundle\BCCResqueBundle(),
+            new DavidGarciaCat\ResqueBundle\BCCResqueBundle(),
             // ...
         );
     }
@@ -102,7 +102,7 @@ You may want to add some configuration to your `config.yml`
 ``` yml
 # app/config/config.yml
 bcc_resque:
-    class: BCC\ResqueBundle\Resque           # the resque class if different from default
+    class: DavidGarciaCat\ResqueBundle\Resque           # the resque class if different from default
     vendor_dir: %kernel.root_dir%/../vendor  # the vendor dir if different from default
     prefix: my-resque-prefix                 # optional prefix to separate Resque data per site/app
     redis:
@@ -125,7 +125,7 @@ This bundle is prepared for lazy loading in order to make a connection to redis 
 
 ## Creating a Job
 
-A job is a subclass of the `BCC\ResqueBundle\Job` class. You also can use the `BCC\Resque\ContainerAwareJob` if you need to leverage the container during job execution.
+A job is a subclass of the `DavidGarciaCat\ResqueBundle\Job` class. You also can use the `BCC\Resque\ContainerAwareJob` if you need to leverage the container during job execution.
 You will be forced to implement the run method that will contain your job logic:
 
 ``` php
@@ -133,7 +133,7 @@ You will be forced to implement the run method that will contain your job logic:
 
 namespace My;
 
-use BCC\ResqueBundle\Job;
+use DavidGarciaCat\ResqueBundle\Job;
 
 class MyJob extends Job
 {
@@ -269,7 +269,7 @@ From within the job:
 
 namespace My;
 
-use BCC\ResqueBundle\Job;
+use DavidGarciaCat\ResqueBundle\Job;
 
 class MyJob extends Job
 {
@@ -304,7 +304,7 @@ Just extend the `ContainerAwareJob`:
 
 namespace My;
 
-use BCC\ResqueBundle\ContainerAwareJob;
+use DavidGarciaCat\ResqueBundle\ContainerAwareJob;
 
 class MyJob extends ContainerAwareJob
 {

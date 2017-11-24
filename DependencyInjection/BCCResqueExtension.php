@@ -1,6 +1,6 @@
 <?php
 
-namespace BCC\ResqueBundle\DependencyInjection;
+namespace DavidGarciaCat\ResqueBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

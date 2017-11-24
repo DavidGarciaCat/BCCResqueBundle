@@ -1,6 +1,6 @@
 <?php
 
-namespace BCC\ResqueBundle\Command;
+namespace DavidGarciaCat\ResqueBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
