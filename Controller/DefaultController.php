@@ -9,12 +9,12 @@ class DefaultController extends Controller
     public function indexAction()
     {
         $this->getResque()->pruneDeadWorkers();
-        
+
         return $this->render(
             'BCCResqueBundle:Default:index.html.twig',
-            array(
+            [
                 'resque' => $this->getResque(),
-            )
+            ]
         );
     }
 
@@ -31,11 +31,11 @@ class DefaultController extends Controller
 
         return $this->render(
             'BCCResqueBundle:Default:queue_show.html.twig',
-            array(
-                'queue' => $queue,
-                'jobs' => $jobs,
-                'showingAll' => $showingAll
-            )
+            [
+                'queue'      => $queue,
+                'jobs'       => $jobs,
+                'showingAll' => $showingAll,
+            ]
         );
     }
 
@@ -51,10 +51,10 @@ class DefaultController extends Controller
 
         return $this->render(
             'BCCResqueBundle:Default:failed_list.html.twig',
-            array(
-                'jobs' => $jobs,
+            [
+                'jobs'       => $jobs,
                 'showingAll' => $showingAll,
-            )
+            ]
         );
     }
 
@@ -62,15 +62,15 @@ class DefaultController extends Controller
     {
         return $this->render(
             'BCCResqueBundle:Default:scheduled_list.html.twig',
-            array(
-                'timestamps' => $this->getResque()->getDelayedJobTimestamps()
-            )
+            [
+                'timestamps' => $this->getResque()->getDelayedJobTimestamps(),
+            ]
         );
     }
 
     public function showTimestampAction($timestamp)
     {
-        $jobs = array();
+        $jobs = [];
 
         // we don't want to enable the twig debug extension for this...
         foreach ($this->getResque()->getJobsForTimestamp($timestamp) as $job) {
@@ -79,10 +79,10 @@ class DefaultController extends Controller
 
         return $this->render(
             'BCCResqueBundle:Default:scheduled_timestamp.html.twig',
-            array(
+            [
                 'timestamp' => $timestamp,
-                'jobs' => $jobs
-            )
+                'jobs'      => $jobs,
+            ]
         );
     }
 
@@ -95,7 +95,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * decide which parts of a job queue to show
+     * decide which parts of a job queue to show.
      *
      * @return array
      */
@@ -111,6 +111,6 @@ class DefaultController extends Controller
             $showingAll = true;
         }
 
-        return array($start, $count, $showingAll);
+        return [$start, $count, $showingAll];
     }
 }
