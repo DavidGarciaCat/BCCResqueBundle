@@ -116,7 +116,7 @@ class StartWorkerCommand extends ContainerAwareCommand
 
         // if foreground, we redirect output
         if ($input->getOption('foreground')) {
-            $process->run(function ($type, $buffer) use ($output) {
+            $process->run(function($type, $buffer) use ($output) {
                 $output->write($buffer);
             });
         }
