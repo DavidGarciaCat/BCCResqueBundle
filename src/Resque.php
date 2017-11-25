@@ -141,7 +141,7 @@ class Resque
     public function getQueues()
     {
         return array_map(
-            function ($queue) {
+            function($queue) {
                 return new Queue($queue);
             },
             \Resque::queues()
@@ -169,13 +169,13 @@ class Resque
                 $hostname = gethostname();
             }
 
-            $workers = array_filter($workers, function ($worker) use ($hostname) {
+            $workers = array_filter($workers, function($worker) use ($hostname) {
                 return strpos((string) $worker, $hostname.':') === 0;
             });
         }
 
         return array_map(
-            function ($worker) {
+            function($worker) {
                 return new Worker($worker);
             },
             $workers

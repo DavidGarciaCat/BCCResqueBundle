@@ -86,7 +86,7 @@ class StartScheduledWorkerCommand extends ContainerAwareCommand
         $output->writeln(\sprintf('Starting worker <info>%s</info>', $process->getCommandLine()));
 
         if ($input->getOption('foreground')) {
-            $process->run(function ($type, $buffer) use ($output) {
+            $process->run(function($type, $buffer) use ($output) {
                 $output->write($buffer);
             });
         }

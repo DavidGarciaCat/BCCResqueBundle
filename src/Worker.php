@@ -29,7 +29,7 @@ class Worker
     public function getQueues()
     {
         return array_map(
-            function ($queue) {
+            function($queue) {
                 return new Queue($queue);
             },
             $this->worker->queues()
