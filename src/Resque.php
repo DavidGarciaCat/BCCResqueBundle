@@ -1,6 +1,6 @@
 <?php
 
-namespace DavidGarciaCat\ResqueBundle;
+namespace BCC\ResqueBundle;
 
 use Psr\Log\NullLogger;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace DavidGarciaCat\ResqueBundle;
+namespace BCC\ResqueBundle;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Finder\Finder;

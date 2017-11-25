@@ -1,6 +1,6 @@
 <?php
 
-namespace DavidGarciaCat\ResqueBundle\Controller;
+namespace BCC\ResqueBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -11,7 +11,7 @@ class DefaultController extends Controller
         $this->getResque()->pruneDeadWorkers();
 
         return $this->render(
-            'DavidGarciaCatResqueBundle:Default:index.html.twig',
+            'BCCResqueBundle:Default:index.html.twig',
             [
                 'resque' => $this->getResque(),
             ]
@@ -30,7 +30,7 @@ class DefaultController extends Controller
         }
 
         return $this->render(
-            'DavidGarciaCatResqueBundle:Default:queue_show.html.twig',
+            'BCCResqueBundle:Default:queue_show.html.twig',
             [
                 'queue'      => $queue,
                 'jobs'       => $jobs,
@@ -50,7 +50,7 @@ class DefaultController extends Controller
         }
 
         return $this->render(
-            'DavidGarciaCatResqueBundle:Default:failed_list.html.twig',
+            'BCCResqueBundle:Default:failed_list.html.twig',
             [
                 'jobs'       => $jobs,
                 'showingAll' => $showingAll,
@@ -61,7 +61,7 @@ class DefaultController extends Controller
     public function listScheduledAction()
     {
         return $this->render(
-            'DavidGarciaCatResqueBundle:Default:scheduled_list.html.twig',
+            'BCCResqueBundle:Default:scheduled_list.html.twig',
             [
                 'timestamps' => $this->getResque()->getDelayedJobTimestamps(),
             ]
@@ -78,7 +78,7 @@ class DefaultController extends Controller
         }
 
         return $this->render(
-            'DavidGarciaCatResqueBundle:Default:scheduled_timestamp.html.twig',
+            'BCCResqueBundle:Default:scheduled_timestamp.html.twig',
             [
                 'timestamp' => $timestamp,
                 'jobs'      => $jobs,
@@ -87,7 +87,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @return \DavidGarciaCat\ResqueBundle\Resque
+     * @return \BCC\ResqueBundle\Resque
      */
     protected function getResque()
     {

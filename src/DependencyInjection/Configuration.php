@@ -1,6 +1,6 @@
 <?php
 
-namespace DavidGarciaCat\ResqueBundle\DependencyInjection;
+namespace BCC\ResqueBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -18,7 +18,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('david_garcia_cat_resque');
+        $rootNode = $treeBuilder->root('bcc_resque');
 
         $rootNode
             ->addDefaultsIfNotSet()
@@ -32,7 +32,7 @@ class Configuration implements ConfigurationInterface
                     ->defaultNull()
                     ->end()
                 ->scalarNode('class')
-                    ->defaultValue('DavidGarciaCat\ResqueBundle\Resque')
+                    ->defaultValue('BCC\ResqueBundle\Resque')
                     ->cannotBeEmpty()
                     ->info('Set the resque class dir')
                 ->end()
