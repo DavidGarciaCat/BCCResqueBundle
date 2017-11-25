@@ -18,7 +18,7 @@
     ],
     "require": {
         "php": ">=5.5,<7.2",
-        "symfony/framework-bundle": ">=2.0,>=3.0,<4",
+        "symfony/framework-bundle": ">=2.0,<4",
         "chrisboulton/php-resque": "^1.2",
         "chrisboulton/php-resque-scheduler": "^1.1"
     },
