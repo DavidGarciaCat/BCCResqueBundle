@@ -17,8 +17,8 @@
         }
     ],
     "require": {
-        "php": ">=5.5,<7.2",
-        "symfony/framework-bundle": ">=2.0,<4",
+        "php": ">=5.5,<8",
+        "symfony/framework-bundle": ">=2.0,<5",
         "david-garcia/php-resque": "^1.2",
         "david-garcia/php-resque-scheduler": "^1.1"
     },
